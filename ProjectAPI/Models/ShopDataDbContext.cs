@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ProjectAPI.Models;
 
 namespace ProjectAPI.Models
 {
@@ -64,5 +65,10 @@ namespace ProjectAPI.Models
             });
             base.OnModelCreating(modelBuilder);
         }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSqlServer("Data Source=TRD-519; Initial Catalog=ShoppingProject;Integrated Security=true;");
+        //}
+        public DbSet<ProjectAPI.Models.Brand> Brand { get; set; }
     }
 }
