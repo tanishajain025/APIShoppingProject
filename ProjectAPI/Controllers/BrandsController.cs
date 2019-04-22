@@ -22,9 +22,9 @@ namespace ProjectAPI.Controllers
 
         // GET: api/Brands
         [HttpGet]
-        public IEnumerable<Brand> GetBrand()
+        public IEnumerable<Brand> GetBrands()
         {
-            return _context.Brand;
+            return _context.Brands;
         }
 
         // GET: api/Brands/5
@@ -36,7 +36,7 @@ namespace ProjectAPI.Controllers
                 return BadRequest(ModelState);
             }
 
-            var brand = await _context.Brand.FindAsync(id);
+            var brand = await _context.Brands.FindAsync(id);
 
             if (brand == null)
             {
@@ -90,7 +90,7 @@ namespace ProjectAPI.Controllers
                 return BadRequest(ModelState);
             }
 
-            _context.Brand.Add(brand);
+            _context.Brands.Add(brand);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetBrand", new { id = brand.BrandId }, brand);
@@ -105,13 +105,13 @@ namespace ProjectAPI.Controllers
                 return BadRequest(ModelState);
             }
 
-            var brand = await _context.Brand.FindAsync(id);
+            var brand = await _context.Brands.FindAsync(id);
             if (brand == null)
             {
                 return NotFound();
             }
 
-            _context.Brand.Remove(brand);
+            _context.Brands.Remove(brand);
             await _context.SaveChangesAsync();
 
             return Ok(brand);
@@ -119,7 +119,7 @@ namespace ProjectAPI.Controllers
 
         private bool BrandExists(int id)
         {
-            return _context.Brand.Any(e => e.BrandId == id);
+            return _context.Brands.Any(e => e.BrandId == id);
         }
     }
 }

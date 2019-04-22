@@ -25,7 +25,7 @@ namespace ProjectAPI.Models
         public int Zip { get; set; }
         public double PhoneNo { get; set; }
         public string Password { get; set; }
-        public bool ShippingAddress { get; set; }
+        public bool Shipping_Address { get; set; }
 
         public List<Feedback> Feedbacks { get; set; }
         public List<Order> Orders { get; set; }

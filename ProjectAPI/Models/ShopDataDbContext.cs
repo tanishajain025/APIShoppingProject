@@ -22,6 +22,8 @@ namespace ProjectAPI.Models
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Feedback> Feedbacks { get; set; }
         public DbSet<Order> Orders { get; set; }
+
+        public DbSet<Brand> Brands{ get; set; }
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{
         //    optionsBuilder.UseSqlServer("Data Source=TRD-519; Initial Catalog=ShoppingProject;Integrated Security=true;");
@@ -69,6 +71,6 @@ namespace ProjectAPI.Models
         //{
         //    optionsBuilder.UseSqlServer("Data Source=TRD-519; Initial Catalog=ShoppingProject;Integrated Security=true;");
         //}
-        public DbSet<ProjectAPI.Models.Brand> Brand { get; set; }
+       
     }
 }
